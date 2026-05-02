@@ -65,5 +65,7 @@
 # * GIT
 # * (1) GIT repo local - remote github
 # * (2) git init --> tạo repo trên local - empty
-# * (3) changes --> so với phiên bản trước đó
-# 
+# * (3) git status --> check thay đổi các files
+# * (4) changes --> so với phiên bản trước đó
+# * (5) git add . --> chuyển tất cả các file vào vùng staging
+# * (6) git commit -m "message" --> commit các file trong vùng staging --> ghi nhận lại thành 1 version
