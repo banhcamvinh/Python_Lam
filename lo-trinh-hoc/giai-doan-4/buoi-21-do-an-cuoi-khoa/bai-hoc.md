@@ -1,4 +1,4 @@
-# Buổi 20: Đồ Án Cuối Khóa
+# Buổi 21: Đồ Án Cuối Khóa
 
 ## Mục tiêu buổi học
 - Học sinh trình bày đồ án cá nhân

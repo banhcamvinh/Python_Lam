@@ -1,4 +1,4 @@
-# Buổi 11: SQLite & Python
+# Buổi 12: SQLite & Python
 
 ## Mục tiêu buổi học
 - Hiểu database là gì và tại sao cần dùng

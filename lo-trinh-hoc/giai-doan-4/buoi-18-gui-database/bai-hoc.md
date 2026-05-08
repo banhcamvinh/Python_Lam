@@ -1,4 +1,4 @@
-# Buổi 17: Kết Nối GUI + Database
+# Buổi 18: Kết Nối GUI + Database
 
 ## Mục tiêu buổi học
 - Kết hợp Tkinter với SQLite để tạo app hoàn chỉnh

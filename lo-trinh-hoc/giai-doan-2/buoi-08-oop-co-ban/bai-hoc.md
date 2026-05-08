@@ -1,4 +1,4 @@
-# Buổi 7: OOP Cơ Bản - Class & Object
+# Buổi 8: OOP Cơ Bản - Class & Object
 
 ## Mục tiêu buổi học
 - Hiểu khái niệm lập trình hướng đối tượng (OOP) và tại sao cần dùng

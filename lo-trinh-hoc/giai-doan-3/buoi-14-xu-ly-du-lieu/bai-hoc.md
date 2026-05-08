@@ -1,4 +1,4 @@
-# Buổi 13: Xử Lý Dữ Liệu Nâng Cao
+# Buổi 14: Xử Lý Dữ Liệu Nâng Cao
 
 ## Mục tiêu buổi học
 - Nắm vững List Comprehension - cách viết gọn và Pythonic

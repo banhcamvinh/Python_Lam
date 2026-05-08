@@ -1,4 +1,4 @@
-# Buổi 12: API Cơ Bản
+# Buổi 13: API Cơ Bản
 
 ## Mục tiêu buổi học
 - Hiểu API là gì và cách hoạt động
