@@ -319,4 +319,4 @@ Tạo file `diem.csv` với nội dung: `Tên,Toán,Lý,Hóa` (mỗi dòng 1 sin
 - **Ghi file**: `"w"` ghi đè, `"a"` nối thêm
 - **try/except**: Bắt lỗi để chương trình không crash
 - **Lỗi hay gặp**: ValueError, FileNotFoundError, ZeroDivisionError
-- **Buổi sau**: Mini Project 1 - Ứng dụng quản lý danh bạ!
+- **Buổi sau**: Git cơ bản - Quản lý mã nguồn với Git và GitHub!

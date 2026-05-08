@@ -1,4 +1,4 @@
-# Buổi 14: Mini Project 3 - App Tra Cứu Thời Tiết
+# Buổi 15: Mini Project 3 - App Tra Cứu Thời Tiết
 
 ## Mục tiêu buổi học
 - Tổng hợp kiến thức Giai đoạn 3: SQLite, API, xử lý dữ liệu

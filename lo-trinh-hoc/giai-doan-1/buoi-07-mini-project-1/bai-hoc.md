@@ -1,4 +1,4 @@
-# Buổi 6: Mini Project 1 - Quản Lý Danh Bạ
+# Buổi 7: Mini Project 1 - Quản Lý Danh Bạ
 
 ## Mục tiêu buổi học
 - Tổng hợp kiến thức Giai đoạn 1: biến, vòng lặp, list, dict, hàm, file, try/except
@@ -212,9 +212,10 @@ main()
 ---
 
 ## Tóm tắt Giai đoạn 1
-Sau 6 buổi, các bạn đã nắm được:
+Sau 7 buổi, các bạn đã nắm được:
 - **Nền tảng**: Biến, kiểu dữ liệu, điều kiện, vòng lặp
 - **Cấu trúc dữ liệu**: List, Tuple, Dictionary
 - **Hàm**: Chia code thành khối nhỏ, tái sử dụng
 - **File & Lỗi**: Lưu trữ dữ liệu, xử lý ngoại lệ
+- **Git**: Quản lý mã nguồn, làm việc nhóm với GitHub
 - **Giai đoạn 2**: Lập trình hướng đối tượng (OOP) - cách tổ chức code chuyên nghiệp hơn!

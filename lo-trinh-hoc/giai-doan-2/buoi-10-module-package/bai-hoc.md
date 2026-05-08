@@ -1,4 +1,4 @@
-# Buổi 9: Module & Package
+# Buổi 10: Module & Package
 
 ## Mục tiêu buổi học
 - Hiểu module là gì, cách import và sử dụng

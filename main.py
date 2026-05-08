@@ -69,3 +69,20 @@
 # * (4) changes --> so với phiên bản trước đó
 # * (5) git add . --> chuyển tất cả các file vào vùng staging
 # * (6) git commit -m "message" --> commit các file trong vùng staging --> ghi nhận lại thành 1 version
+# * (7) branch là nhánh -- git checkout branch --> version, history
+# * (8) git remote add origin https://github.com/banhcamvinh/Python_Lam.git
+
+
+
+for index in range(10):
+    # todo: c1 - Nối chuỗi
+    # print(  "trước "    ,index,     " sau"   )
+
+    # todo: c2 - format chuỗi
+    print(  f"{index}. {index}"    )
+
+
+# * 1. task 1
+# * 2. task 2
+
+

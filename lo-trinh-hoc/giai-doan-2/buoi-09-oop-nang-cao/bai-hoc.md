@@ -1,4 +1,4 @@
-# Buổi 8: OOP Nâng Cao - Kế Thừa & Đa Hình
+# Buổi 9: OOP Nâng Cao - Kế Thừa & Đa Hình
 
 ## Mục tiêu buổi học
 - Hiểu kế thừa (inheritance): class con kế thừa từ class cha

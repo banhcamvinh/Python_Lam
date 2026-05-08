@@ -1,4 +1,4 @@
-# Buổi 15: Tkinter Cơ Bản - Tạo Giao Diện
+# Buổi 16: Tkinter Cơ Bản - Tạo Giao Diện
 
 ## Mục tiêu buổi học
 - Hiểu cách tạo ứng dụng có giao diện (GUI) bằng Tkinter

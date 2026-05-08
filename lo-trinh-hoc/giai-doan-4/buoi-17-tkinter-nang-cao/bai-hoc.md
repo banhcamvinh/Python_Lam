@@ -1,4 +1,4 @@
-# Buổi 16: Tkinter Nâng Cao
+# Buổi 17: Tkinter Nâng Cao
 
 ## Mục tiêu buổi học
 - Sử dụng thêm widget: Listbox, Combobox, Messagebox, Menu

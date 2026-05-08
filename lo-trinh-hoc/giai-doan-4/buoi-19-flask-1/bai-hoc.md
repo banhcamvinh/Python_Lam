@@ -1,4 +1,4 @@
-# Buổi 18: Web App Với Flask (Phần 1)
+# Buổi 19: Web App Với Flask (Phần 1)
 
 ## Mục tiêu buổi học
 - Hiểu web app hoạt động thế nào (client-server)

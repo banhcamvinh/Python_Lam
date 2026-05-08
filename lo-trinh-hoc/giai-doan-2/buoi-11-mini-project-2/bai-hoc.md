@@ -1,4 +1,4 @@
-# Buổi 10: Mini Project 2 - Quản Lý Sinh Viên (OOP + File)
+# Buổi 11: Mini Project 2 - Quản Lý Sinh Viên (OOP + File)
 
 ## Mục tiêu buổi học
 - Tổng hợp kiến thức OOP: class, kế thừa, đóng gói

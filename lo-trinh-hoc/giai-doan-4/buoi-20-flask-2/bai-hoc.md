@@ -1,4 +1,4 @@
-# Buổi 19: Web App Với Flask (Phần 2)
+# Buổi 20: Web App Với Flask (Phần 2)
 
 ## Mục tiêu buổi học
 - Kết nối Flask với SQLite database
