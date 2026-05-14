@@ -1,3 +1,4 @@
+import json
 def Main_menu():
     print("1. Add Item")
     print("2. Display Item")
@@ -6,20 +7,24 @@ def Main_menu():
 
 
 def Add_Item():
+    filename = "data.json" 
+
+    items = []
     new_item = input("Enter the name of the item to add: ")
     items.append(new_item)
-    print(f"{new_item} added successfully.")
+    files = json.dumps(items)
+    with open(filename, "w") as f:
+        json.dumps(items, f)
+
 
 
 def Display_Items():
-    if not items:
-        print("The list is currently empty.")
-    else:
-        print("Items in list:")
-        
+    filename = "data.json"
+    with open(filename, "w") as f:
+        json.dumps(items, f)
         for item in items:
-            print("- " + item)
-    input("Press to continue: ")
+                print(f"item in list: {item}")
+    
 
 
 def Delete_Items():
@@ -56,7 +61,3 @@ while True:
 
     else:
         print("Invalid choice, please try again.")
-
-
-
-
