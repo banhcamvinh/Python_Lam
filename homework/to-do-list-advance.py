@@ -23,7 +23,24 @@ def Main_menu():
     print("2. Display Items")
     print("3. Delete Items")
     print("4. Update Items")
-    print("5. Exit")
+    print("5. Update Status")
+    print("6. Exit")
+
+def Update_status():
+    items = load_items()
+    if not items:
+        print("No items to update.")
+        return
+    Display_Items()
+    name_status = input("Enter the name status to update: ")
+    for item in items:
+        if item["task name"] == name_status:
+            item["status"] = input("New status: ")
+            item["updatedAt"] = str(datetime.now())
+            save_items(items)
+            print("Item updated successfully.")
+            return
+    print("Item not found.")
 
 def Update_Item():
     items = load_items()
@@ -34,9 +51,9 @@ def Update_Item():
     name = input("Enter the task name to update: ")
     for item in items:
         if item["task name"] == name:
-            item["task name"] = input("New name: ") 
-            item["description"] = input("New description: ") 
-            item["status"] = input("New status: ") 
+            item["task name"] = input("New name: ")
+            item["description"] = input("New description: ")
+            item["updatedAt"] = str(datetime.now())
             save_items(items)
             print("Item updated successfully.")
             return
@@ -56,6 +73,7 @@ def Add_Item():
     items_visual["description"] = new_description
     items_visual["status"] = status
     items_visual["createdAt"] = str(datetime.now())
+    items_visual["updatedAt"] = None
 
     items.append(items_visual)                  # Step 2: add the new item to the list
     save_items(items)                             # Step 3: save the updated list back to the file
@@ -80,12 +98,13 @@ def Delete_Items():
     else:
         Display_Items()
         item_to_remove = input("Enter the name of the item to delete: ")
-        if item_to_remove in items:
-            items.remove(item_to_remove)         
-            save_items(items)                     
-            print(f'"{item_to_remove}" removed successfully.')
-        else:
-            print("Item not found.")
+        for item in items:
+            if item["task name"] == item_to_remove:
+                items.remove(item)
+                save_items(items)
+                print(f'"{item_to_remove}" removed successfully.')
+                return
+        print("Item not found.")
 
 
 while True:
@@ -101,6 +120,8 @@ while True:
     elif selection == "4":
         Update_Item()
     elif selection == "5":
+        Update_status()
+    elif selection == "6":
         print("Goodbye!")
         break
     else:
