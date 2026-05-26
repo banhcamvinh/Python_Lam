@@ -63,7 +63,7 @@ def Update_Item():
 
 
 def Add_Item():
-    items = load_items()                          # Step 1: read what's already in the file
+    items = load_items()                        
     new_item = input("Enter the name of the item to add: ")
     new_description = input("Enter the description of the item added: ")
     status = input("Enter the status of task (todo, in-progress, done): ")
