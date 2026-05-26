@@ -72,8 +72,7 @@ def Add_Item():
     items_visual["task name"] = new_item
     items_visual["description"] = new_description
     items_visual["status"] = status
-    items_visual["createdAt"] = str(datetime.now())
-    items_visual["updatedAt"] = None
+    items_visual["updatedAt"] = str(datetime.now())
 
     items.append(items_visual)                  # Step 2: add the new item to the list
     save_items(items)                             # Step 3: save the updated list back to the file
@@ -86,8 +85,11 @@ def Display_Items():
         print("No items found.")
     else:
         print("Items in your list:")
-        for i, item in enumerate(items, 1):       # enumerate gives each item a number starting at 1
-            print(f" - {i}. {item}")
+        for i, item in enumerate(items, 1):
+            print(f" {i}. {item['task name']}")
+            print(f"    Description : {item['description']}")
+            print(f"    Status      : {item['status']}")
+            print(f"    Updated at  : {item['updatedAt']}")
             print()
 
 
@@ -122,7 +124,7 @@ while True:
     elif selection == "5":
         Update_status()
     elif selection == "6":
-        print("Goodbye!")
+        print("Goodbye")
         break
     else:
         print("Invalid choice, please try again.")
