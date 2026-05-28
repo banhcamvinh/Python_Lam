@@ -17,6 +17,13 @@ def save_items(items):
     with open(output_file, "w") as f:
         json.dump(items, f)
 
+def ItemStatus_Display():
+    items = load_items()
+    item_sort = input("Enter the item with which of the 3 status (todo, in progress, done): ")
+    for item in items:
+        if item["status"] == item_sort:
+            print(item["task name"])
+            print(item["status"])
 
 def Main_menu():
     print("1. Add Item")
@@ -24,7 +31,8 @@ def Main_menu():
     print("3. Delete Items")
     print("4. Update Items")
     print("5. Update Status")
-    print("6. Exit")
+    print("6. Display Item with chosen status")
+    print("7. Exit")
 
 def Update_status():
     items = load_items()
@@ -35,7 +43,7 @@ def Update_status():
     name_status = input("Enter the name status to update: ")
     for item in items:
         if item["task name"] == name_status:
-            item["status"] = input("New status: ")
+            item["status"] = input("New status (in progress, done): ")
             item["updatedAt"] = str(datetime.now())
             save_items(items)
             print("Item updated successfully.")
@@ -66,12 +74,12 @@ def Add_Item():
     items = load_items()                        
     new_item = input("Enter the name of the item to add: ")
     new_description = input("Enter the description of the item added: ")
-    status = input("Enter the status of task (todo, in-progress, done): ")
     items_visual = {}
     items_visual["uuid"]= str(uuid.uuid1())
     items_visual["task name"] = new_item
     items_visual["description"] = new_description
-    items_visual["status"] = status
+    items_visual["status"] = "todo"
+    items_visual["createdAt"] = str(datetime.now())
     items_visual["updatedAt"] = str(datetime.now())
 
     items.append(items_visual)                  # Step 2: add the new item to the list
@@ -87,9 +95,9 @@ def Display_Items():
         print("Items in your list:")
         for i, item in enumerate(items, 1):
             print(f" {i}. {item['task name']}")
-            print(f"    Description : {item['description']}")
-            print(f"    Status      : {item['status']}")
-            print(f"    Updated at  : {item['updatedAt']}")
+            print(f"Description: {item['description']}")
+            print(f"Status: {item['status']}")
+            print(f"Updated at: {item['updatedAt']}")
             print()
 
 
@@ -124,6 +132,9 @@ while True:
     elif selection == "5":
         Update_status()
     elif selection == "6":
+        ItemStatus_Display()
+        
+    elif selection == "7":
         print("Goodbye")
         break
     else:
