@@ -1,19 +1,13 @@
-import csv 
-import pandas as pd
-from pathlib import Path
-df = pd.read_csv('data.csv') 
-current_dir = Path(__file__).parent
-output_file = current_dir / "data.csv"
-
-def load_expense():
-    if output_file.exists():
-        with open(output_file, "r") as f:
-            return csv.load(f)
+import csv
+def load_Expense():
+    try:
+        with open('data.csv', mode='r') as csv_file:
+            reader = csv.DictReader(csv_file)
+            for row in reader:
+                expenses.append(row)
+    except FileNotFoundError:
+        print("No expense file found. Starting fresh.")
     return []
-
-def save_expense(expenses):
-    with open(output_file, "w") as f:
-        csv.dump(expenses, f)
 
 def Main_menu():
     print("1. Add Expense")
@@ -23,44 +17,48 @@ def Main_menu():
     print("5. Display Summary")
 
 def Add_Expense():
-    # expenses = load_expense()
-    # if not expenses:
-    #     print("No expense to update.")
-    #     return
+    expenses = load_Expense()
     add_expense = input("Enter the name of the expense to add: ")
     add_description = input("Enter the description of the expense added: ")
+    add_amount = input("Enter the amount of the expense")
     expense_bar = {}
-    expense_bar["Add expense"] == add_expense
-    expense_bar["Expense description"] == add_description
-    save_expense(expenses)
+    expense_bar["Expense name"] = add_expense
+    expense_bar["Expense description"] = add_description
+    expense_bar["Expense amount"] = add_amount
+    with open('data.csv', mode='a', newline='') as csv_file:
+        fieldnames = ['expense', 'description', 'amount']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writerow({
+            'expense': expense_bar["Expense name"],
+            'description': expense_bar["Expense description"],
+            'amount': expense_bar["Expense amount"]
+        })
 def Update_Expense():
-    choose_expense = input("Choose the expense you want to edit: ")
-    
-    
-    
-    
+    expenses = load_Expense()
+    Display_Expense()
+    update_expense = input("Enter the update name of the expense to add: ")
+    update_description = input("Enter the update description of the expense added: ")
+    update_amount = input("Enter the update amount of the expense")
+    if expense in expenses:
+        expense_bar["Expense name"] = update_expense
+        expense_bar["Expense description"] = update_description
+        expense_bar["Expense amount"] = update_amount
+
+
+def Display_Expense():
+        print("Items in your list:")
+        for i, expense_bar in enumerate(expense_bar, 1):
+            print(f" {i}. {expense_bar["Expense name"]}")
+            print(f"Description: {expense_bar["Expense description"]}")
+            print(f"Status: {expense_bar["Expense amount"]}")
+            print()
 while True:
     Main_menu()
     selection = input("Select your option: ")
 
     if selection == "1":
         Add_Expense()
-    # elif selection == "2":
-        
-    # elif selection == "3":
-        
-    # elif selection == "4":
-        
-    # elif selection == "5":
-        
+    elif selection == "2":
+        Update_Expense()
     else:
         print("Invalid choice, please try again.")
-    
-
-
-
-
-
-
-    
-
