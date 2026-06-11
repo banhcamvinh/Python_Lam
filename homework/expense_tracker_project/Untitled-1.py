@@ -1,13 +1,11 @@
 import csv
 def load_Expense():
-    try:
-        with open('data.csv', mode='r') as csv_file:
-            reader = csv.DictReader(csv_file)
-            for row in reader:
-                expenses.append(row)
-    except FileNotFoundError:
-        print("No expense file found. Starting fresh.")
-    return []
+    expenses = []
+    with open('data.csv', mode='r', newline='') as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            expenses.append(row)
+    return expenses
 
 def Main_menu():
     print("1. Add Expense")
@@ -17,7 +15,6 @@ def Main_menu():
     print("5. Display Summary")
 
 def Add_Expense():
-    expenses = load_Expense()
     add_expense = input("Enter the name of the expense to add: ")
     add_description = input("Enter the description of the expense added: ")
     add_amount = input("Enter the amount of the expense")
@@ -35,23 +32,45 @@ def Add_Expense():
         })
 def Update_Expense():
     expenses = load_Expense()
-    Display_Expense()
-    update_expense = input("Enter the update name of the expense to add: ")
-    update_description = input("Enter the update description of the expense added: ")
-    update_amount = input("Enter the update amount of the expense")
-    if expense in expenses:
-        expense_bar["Expense name"] = update_expense
-        expense_bar["Expense description"] = update_description
-        expense_bar["Expense amount"] = update_amount
+    Display_Expense(expenses)
+    index = int(input("Enter the number of the expense to update: ")) - 1
+    if 0 <= index < len(expenses):
+        expenses[index]['expense'] = input("Enter the new expense name: ")
+        expenses[index]['description'] = input("Enter the new description: ")
+        expenses[index]['amount'] = input("Enter the new amount: ")
+        with open('data.csv', mode='w', newline='') as csv_file:
+            fieldnames = ['expense', 'description', 'amount']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(expenses)
+        print("Expense updated successfully.")
+    else:
+        print("Invalid expense number.")
 
 
-def Display_Expense():
-        print("Items in your list:")
-        for i, expense_bar in enumerate(expense_bar, 1):
-            print(f" {i}. {expense_bar["Expense name"]}")
-            print(f"Description: {expense_bar["Expense description"]}")
-            print(f"Status: {expense_bar["Expense amount"]}")
-            print()
+def Delete_Expense():
+    expenses = load_Expense()
+    Display_Expense(expenses)
+    index = int(input("Enter the number of the expense to delete: ")) - 1
+    if 0 <= index < len(expenses):
+        removed = expenses.pop(index)
+        with open('data.csv', mode='w', newline='') as csv_file:
+            fieldnames = ['expense', 'description', 'amount']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(expenses)
+        print(f"Expense '{removed['expense']}' deleted successfully.")
+    else:
+        print("Invalid expense number.")
+
+
+def Display_Expense(expenses):
+    print("Items in your list:")
+    for i, expense in enumerate(expenses, 1):
+        print(f" {i}. {expense['expense']}")
+        print(f"Description: {expense['description']}")
+        print(f"Amount: {expense['amount']}")
+        print()
 while True:
     Main_menu()
     selection = input("Select your option: ")
@@ -60,5 +79,9 @@ while True:
         Add_Expense()
     elif selection == "2":
         Update_Expense()
+    elif selection == "3":
+        Delete_Expense()
+    elif selection == "4":
+        Display_Expense(load_Expense())
     else:
         print("Invalid choice, please try again.")
