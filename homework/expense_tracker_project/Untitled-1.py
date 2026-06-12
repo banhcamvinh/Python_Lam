@@ -17,7 +17,7 @@ def Main_menu():
 def Add_Expense():
     add_expense = input("Enter the name of the expense to add: ")
     add_description = input("Enter the description of the expense added: ")
-    add_amount = input("Enter the amount of the expense")
+    add_amount = input("Enter the amount of the expense: ")
     expense_bar = {}
     expense_bar["Expense name"] = add_expense
     expense_bar["Expense description"] = add_description
